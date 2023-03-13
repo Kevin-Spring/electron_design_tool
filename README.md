@@ -1,4 +1,4 @@
-# Use G-Popout APP
+# How to use the APP
 
 ## Install the app
 
@@ -54,7 +54,7 @@ cmd + r             - refresh app
 cmd + shift + r     - hard refresh app
 ```
 
-# Setup G-Popout APP
+# Setup APP
 
 ## Project setup
 
