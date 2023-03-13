@@ -1,0 +1,239 @@
+:root {
+  --box-height: 100vh;
+  --box-width: 100vw;
+  --calc-size: * (var(--box-width) - 320px) / (1440 - 320);
+  --ps-center: 0 auto;
+  --trns-base: all 0.2s ease-in-out;
+  --trns-long: all 0.4s ease-in-out;
+  --dgen-color-gold: #ffb400;
+  --dgen-color-brand: #ff0037;
+  --dgen-color-green-medium: #009960;
+  --dgen-color-constant-text-black: #070a0d;
+  --dgen-color-constant-text-white: #fff;
+  --dgen-color-constant-text-green-bright: #4fca49;
+  --dgen-constant-text-link-bright: #2969ff;
+  --dgen-color-contrast-rich: #070a0d;
+  --dgen-color-contrast: #111418;
+  --dgen-color-grey: #66696c;
+  --dgen-color-base: #fff;
+  --dgen-color-link: #007aff;
+  --dgen-color-link-hover: #0068d9;
+  --dgen-color-link-visited: #5c0cd5;
+  --dgen-color-green-bright: #4fca49;
+  --dgen-color-green-dark: #006640;
+  --dgen-color-grey-100: #f6f6f7;
+  --dgen-color-grey-200: #dedfe3;
+  --white: var(--dgen-color-base);
+  --dgen-gradient-red: linear-gradient(90deg, #fb7f70 0%, #f53d4f 100%);
+  --dgen-gradient-green: linear-gradient(90deg, #4fca49 0%, #009960 100%);
+  --ff-base: "Circular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
+    sans-serif;
+  --ff-alt: "Circular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
+    sans-serif;
+  --fs-base: 1em;
+  --fs-small: 0.8em;
+  --card-size: calc(350px + (416 - 350) var(--calc-size));
+  --size-80: calc(40px + (80 - 40) var(--calc-size));
+  --size-62: calc(25px + (62 - 25) var(--calc-size));
+  --size-48: calc(25px + (48 - 25) var(--calc-size));
+  --size-40: calc(25px + (40 - 25) var(--calc-size));
+  --size-30: calc(25px + (30 - 25) var(--calc-size));
+  --size-25: calc(20px + (25 - 20) var(--calc-size));
+  --size-20: calc(15px + (20 - 15) var(--calc-size));
+  --size-15: calc(10px + (15 - 10) var(--calc-size));
+  --size-12: calc(10px + (12 - 10) var(--calc-size));
+  --size-10: calc(5px + (10 - 5) var(--calc-size));
+  --br-base: 4px;
+  --lh-base: 1.25;
+  --ls-base: 0.1px;
+  --fw-base: 400;
+  --fw-medium: 500;
+  --opacity-hover: 0.7;
+  --box-shadow: 0 6px 10px 0 rgb(28 28 28 / 40%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  color: var(--dgen-color-contrast-rich);
+  font-weight: var(--fw-base);
+  letter-spacing: var(--ls-base);
+  line-height: var(--lh-base);
+}
+
+.hidden {
+  display: none;
+}
+
+/** ------ Main Window ------ **/
+
+.gt-frame-form-wrapper {
+  height: var(--box-height);
+  width: var(--box-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-80);
+  flex-flow: row wrap;
+  padding: var(--size-62);
+}
+
+.gt-upload-frame-wrapper {
+  flex: 0 0 35%;
+  max-width: calc(40% - var(--size-80));
+}
+
+.gt-upload-frame-wrapper .gt-upload-frame-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-30);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  padding: var(--size-62) var(--size-48);
+  border-radius: var(--br-base);
+  max-width: var(--card-size);
+  margin: 0 auto;
+}
+
+.gt-upload-frame-wrapper .gt-upload-frame-label span {
+  transition: var(--trns-base);
+}
+
+.gt-upload-frame-wrapper .gt-upload-frame-label img {
+  width: 100%;
+  max-height: 32px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.gt-preview-wrapper {
+  flex: 0 0 65%;
+  max-width: calc(60% - var(--size-80));
+  margin-bottom: var(--size-20);
+}
+
+#preview img {
+  height: auto;
+  max-height: 350px;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  box-shadow: var(--box-shadow);
+}
+
+.gt-preview-file-name {
+  margin-top: var(--size-30);
+  text-align: center;
+}
+
+.gt-frame-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.gt-frame-form-field label {
+  font-weight: var(--fw-medium);
+  margin-top: var(--size-10);
+  font-size: var(--fs-small);
+}
+
+#frame-form {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+input {
+  border: 2px solid var(--dgen-color-grey-200);
+  padding: var(--size-12);
+  border-radius: var(--br-base);
+  width: 100%;
+  margin: var(--size-10) auto;
+  outline: none;
+}
+
+input:focus,
+input:focus-visible,
+input:active {
+  border-color: var(--dgen-color-link);
+}
+
+button,
+.gt-btn {
+  position: relative;
+  display: inline-block;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  border-radius: 0.6em;
+  color: var(--dgen-color-constant-text-white);
+  text-decoration: none;
+  background: var(--dgen-color-link);
+  padding: calc(9px + (13 - 9) var(--calc-size))
+    calc(15px + (24 - 15) var(--calc-size));
+  margin-top: var(--size-10);
+  margin-bottom: var(--size-10);
+  cursor: pointer;
+  transition: var(--trns-base);
+  outline: none;
+  border: none;
+  font-size: var(--fs-base);
+}
+
+button:hover,
+.gt-btn:hover {
+  background: var(--dgen-color-link-hover);
+}
+
+/** ------ End of Main Window ------ **/
+
+/** ------ About Window ------ **/
+.gt-about-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-10);
+}
+
+.gt-about-container img {
+  margin-bottom: var(--size-15);
+}
+/** ------ End of About Window ------ **/
+
+/** ------ Frame Window ------ **/
+#design-frame {
+  margin: 0 auto;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
+  background: var(--dgen-color-grey);
+  cursor: grab;
+}
+
+#design-frame:active {
+  cursor: grabbing;
+}
+
+#design-frame img {
+  width: inherit;
+  pointer-events: none;
+}
+/** ------ End of Frame Window ------ **/
+
+@media only screen and (max-width: 767px) {
+  .gt-upload-frame-wrapper,
+  .gt-preview-wrapper {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: var(--card-size);
+  }
+}

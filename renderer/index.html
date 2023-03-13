@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy"  content="script-src 'self'"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/renderer.js" defer></script>
+    <title>G-Popout</title>
+  </head>
+  <body>
+    <main class="gt-frame-form-wrapper">
+      
+      <div class="gt-upload-frame-wrapper">
+        <label class="gt-upload-frame-label">
+          <img src="./images/generation-logo-clean-2021.png" />
+          <span class="gt-btn">Select a design frame</span>
+          <input id="img" type="file" class="hidden" />
+        </label>
+      </div>
+
+      <div class="gt-preview-wrapper hidden">
+        <div id="preview">
+          <div class="gt-preview-image-container">
+            <img class="" src="" alt="" />
+          </div>
+          <p class="gt-preview-file-name"><strong>File: </strong><span id="filename"></span></p>
+        </div>
+
+        <!-- Form -->
+        <form id="frame-form">
+          <div class="gt-frame-form-field">
+            <label><strong>Width</strong></label>
+            <input
+              type="text"
+              name="width"
+              id="width"
+              placeholder="Width"
+            />
+          </div>
+
+          <div class="gt-frame-form-field">
+            <label><strong>Height</strong></label>
+            <input
+              type="text"
+              name="height"
+              id="height"
+              placeholder="Height"
+            />
+          </div>
+
+           <div class="gt-frame-form-field">
+            <label><strong>Opacity</strong></label>
+            <input
+              type="text"
+              name="opacity"
+              id="opacity"
+              placeholder="Opacity"
+            />
+          </div>
+
+          <!-- Button -->
+          <div class="gt-frame-form-field">
+            <button
+              type="submit" 
+            >
+              Open frame
+            </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
