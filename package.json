@@ -1,6 +1,6 @@
 {
-  "name": "g-popout",
-  "productName": "G-Popout",
+  "name": "Design frame tool",
+  "productName": "Design frame tool",
   "version": "1.0.0",
   "description": "App to create overlays from design frames",
   "main": "main.js",

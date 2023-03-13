@@ -21,7 +21,7 @@ let lockedFrame = true;
 // Create the main window
 function createMainWindow() {
   mainWindow = new BrowserWindow({
-    title: "G-popout",
+    title: "Design frame tool",
     opacity: 1,
     webPreferences: {
       contextIsolation: true,
@@ -36,7 +36,7 @@ function createMainWindow() {
 // Create about window
 function createAboutWindow() {
   const aboutWindow = new BrowserWindow({
-    title: "About G-popout",
+    title: "About Design frame tool",
     width: 300,
     height: 220,
   });
