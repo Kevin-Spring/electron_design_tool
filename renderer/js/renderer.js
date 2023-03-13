@@ -1,6 +1,6 @@
 const form = document.querySelector("#frame-form");
 const preview = document.querySelector("#preview");
-const previewWrapper = document.querySelector(".gt-preview-wrapper");
+const previewWrapper = document.querySelector(".preview-wrapper");
 const previewImg = document.querySelector("#preview img");
 const filename = document.querySelector("#filename");
 const widthInput = document.querySelector("#width");
@@ -95,7 +95,7 @@ function alertError(message) {
     duration: 5000,
     close: false,
     style: {
-      background: "var(--dgen-gradient-red)",
+      background: "var(--gradient-red)",
       color: "white",
       textAlign: "center",
     },
@@ -108,7 +108,7 @@ function alertSuccess(message) {
     duration: 5000,
     close: false,
     style: {
-      background: "var(--dgen-gradient-green)",
+      background: "var(--gradient-green)",
       color: "white",
       textAlign: "center",
     },

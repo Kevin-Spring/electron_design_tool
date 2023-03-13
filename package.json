@@ -1,6 +1,6 @@
 {
-  "name": "Design frame tool",
-  "productName": "Design frame tool",
+  "name": "Design_frame_tool",
+  "productName": "Design_frame_tool",
   "version": "1.0.0",
   "description": "App to create overlays from design frames",
   "main": "main.js",

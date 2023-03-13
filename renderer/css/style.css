@@ -5,27 +5,28 @@
   --ps-center: 0 auto;
   --trns-base: all 0.2s ease-in-out;
   --trns-long: all 0.4s ease-in-out;
-  --dgen-color-gold: #ffb400;
-  --dgen-color-brand: #ff0037;
-  --dgen-color-green-medium: #009960;
-  --dgen-color-constant-text-black: #070a0d;
-  --dgen-color-constant-text-white: #fff;
-  --dgen-color-constant-text-green-bright: #4fca49;
-  --dgen-constant-text-link-bright: #2969ff;
-  --dgen-color-contrast-rich: #070a0d;
-  --dgen-color-contrast: #111418;
-  --dgen-color-grey: #66696c;
-  --dgen-color-base: #fff;
-  --dgen-color-link: #007aff;
-  --dgen-color-link-hover: #0068d9;
-  --dgen-color-link-visited: #5c0cd5;
-  --dgen-color-green-bright: #4fca49;
-  --dgen-color-green-dark: #006640;
-  --dgen-color-grey-100: #f6f6f7;
-  --dgen-color-grey-200: #dedfe3;
-  --white: var(--dgen-color-base);
-  --dgen-gradient-red: linear-gradient(90deg, #fb7f70 0%, #f53d4f 100%);
-  --dgen-gradient-green: linear-gradient(90deg, #4fca49 0%, #009960 100%);
+  --color-gold: #ffb400;
+  --color-brand: #ff0037;
+  --color-green-medium: #009960;
+  --color-constant-text-black: #070a0d;
+  --color-constant-text-white: #fff;
+  --color-constant-text-green-bright: #4fca49;
+  --constant-text-link-bright: #2969ff;
+  --color-contrast-rich: #070a0d;
+  --color-contrast: #111418;
+  --color-grey: #333338;
+  --color-grey-light: #4e4e57;
+  --color-base: #fff;
+  --color-link: #48bae7;
+  --color-link-hover: #7ccdef;
+  --color-link-visited: #5c0cd5;
+  --color-green-bright: #4fca49;
+  --color-green-dark: #006640;
+  --color-grey-100: #f6f6f7;
+  --color-grey-200: #dedfe3;
+  --white: var(--color-base);
+  --gradient-red: linear-gradient(90deg, #fb7f70 0%, #f53d4f 100%);
+  --gradient-green: linear-gradient(90deg, #4fca49 0%, #009960 100%);
   --ff-base: "Circular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
     sans-serif;
   --ff-alt: "Circular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
@@ -61,10 +62,11 @@
 body {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
-  color: var(--dgen-color-contrast-rich);
+  color: var(--color-contrast-rich);
   font-weight: var(--fw-base);
   letter-spacing: var(--ls-base);
   line-height: var(--lh-base);
+  background-color: var(--color-grey);
 }
 
 .hidden {
@@ -73,7 +75,7 @@ body {
 
 /** ------ Main Window ------ **/
 
-.gt-frame-form-wrapper {
+.frame-form-wrapper {
   height: var(--box-height);
   width: var(--box-width);
   display: flex;
@@ -84,12 +86,12 @@ body {
   padding: var(--size-62);
 }
 
-.gt-upload-frame-wrapper {
+.upload-frame-wrapper {
   flex: 0 0 35%;
   max-width: calc(40% - var(--size-80));
 }
 
-.gt-upload-frame-wrapper .gt-upload-frame-label {
+.upload-frame-wrapper .upload-frame-label {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,18 +104,18 @@ body {
   margin: 0 auto;
 }
 
-.gt-upload-frame-wrapper .gt-upload-frame-label span {
+.upload-frame-wrapper .upload-frame-label span {
   transition: var(--trns-base);
 }
 
-.gt-upload-frame-wrapper .gt-upload-frame-label img {
+.upload-frame-wrapper .upload-frame-label img {
   width: 100%;
-  max-height: 32px;
+  max-height: 98px;
   object-fit: contain;
   object-position: center;
 }
 
-.gt-preview-wrapper {
+.preview-wrapper {
   flex: 0 0 65%;
   max-width: calc(60% - var(--size-80));
   margin-bottom: var(--size-20);
@@ -129,17 +131,17 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.gt-preview-file-name {
+.preview-file-name {
   margin-top: var(--size-30);
   text-align: center;
 }
 
-.gt-frame-form-field {
+.frame-form-field {
   display: flex;
   flex-direction: column;
 }
 
-.gt-frame-form-field label {
+.frame-form-field label {
   font-weight: var(--fw-medium);
   margin-top: var(--size-10);
   font-size: var(--fs-small);
@@ -151,30 +153,32 @@ body {
 }
 
 input {
-  border: 2px solid var(--dgen-color-grey-200);
+  border: 2px solid var(--color-grey-light);
   padding: var(--size-12);
   border-radius: var(--br-base);
   width: 100%;
   margin: var(--size-10) auto;
   outline: none;
+  background: var(--color-grey-light);
+  box-shadow: var(--box-shadow);
 }
 
 input:focus,
 input:focus-visible,
 input:active {
-  border-color: var(--dgen-color-link);
+  border-color: var(--color-link);
 }
 
 button,
-.gt-btn {
+.btn {
   position: relative;
   display: inline-block;
   font-weight: var(--fw-medium);
   line-height: 1;
   border-radius: 0.6em;
-  color: var(--dgen-color-constant-text-white);
+  color: var(--color-contrast-rich);
   text-decoration: none;
-  background: var(--dgen-color-link);
+  background: var(--color-grey-light);
   padding: calc(9px + (13 - 9) var(--calc-size))
     calc(15px + (24 - 15) var(--calc-size));
   margin-top: var(--size-10);
@@ -184,17 +188,28 @@ button,
   outline: none;
   border: none;
   font-size: var(--fs-base);
+  box-shadow: var(--box-shadow);
 }
 
 button:hover,
-.gt-btn:hover {
-  background: var(--dgen-color-link-hover);
+.btn:hover {
+  background: var(--color-link);
+}
+
+button:focus,
+.btn:focus {
+  border-color: var(--color-link);
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.97);
 }
 
 /** ------ End of Main Window ------ **/
 
 /** ------ About Window ------ **/
-.gt-about-container {
+.about-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -204,7 +219,7 @@ button:hover,
   gap: var(--size-10);
 }
 
-.gt-about-container img {
+.about-container img {
   margin-bottom: var(--size-15);
 }
 /** ------ End of About Window ------ **/
@@ -215,7 +230,7 @@ button:hover,
   -webkit-user-select: none;
   user-select: none;
   -webkit-app-region: drag;
-  background: var(--dgen-color-grey);
+  background: var(--color-grey);
   cursor: grab;
 }
 
@@ -230,8 +245,8 @@ button:hover,
 /** ------ End of Frame Window ------ **/
 
 @media only screen and (max-width: 767px) {
-  .gt-upload-frame-wrapper,
-  .gt-preview-wrapper {
+  .upload-frame-wrapper,
+  .preview-wrapper {
     flex: 0 0 100%;
     width: 100%;
     max-width: var(--card-size);
