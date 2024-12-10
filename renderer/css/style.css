@@ -3,8 +3,9 @@
 	--box-width: 100vw;
 	--calc-size: * (var(--box-width) - 320px) / (1440 - 320);
 	--ps-center: 0 auto;
-	--trns-base: all 0.2s ease-in-out;
-	--trns-long: all 0.4s ease-in-out;
+	--trns-base: all 0.2s cubic-bezier(0.5, 0, 0.5, 1);
+	--trns-long: all 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+	--trns-timing: cubic-bezier(0.5, 0, 0.5, 1);
 	--color-background: #f6f6f7;
 	--color-surface: #ffffff;
 	--color-text-primary: #111418;
@@ -54,7 +55,7 @@
 	--color-text-primary: #eaeaea;
 	--color-text-secondary: #b3b3b3;
 	--color-text-muted: #787878;
-	--color-border: #333333;
+	--color-border: #858585;
 	--color-highlight: #48bae7;
 	--color-highlight-hover: #5bc3e6;
 	--color-hover-surface: #2a2a2a;
@@ -75,7 +76,7 @@
 		--color-text-primary: #eaeaea;
 		--color-text-secondary: #b3b3b3;
 		--color-text-muted: #787878;
-		--color-border: #333333;
+		--color-border: #858585;
 		--color-highlight: #48bae7;
 		--color-highlight-hover: #5bc3e6;
 		--color-hover-surface: #2a2a2a;
@@ -124,7 +125,7 @@ body {
 	letter-spacing: var(--ls-base);
 	line-height: var(--lh-base);
 	background-color: var(--color-background);
-	transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s var(--trns-timing);
 }
 
 .hidden {
@@ -155,7 +156,7 @@ aside button {
 	padding: var(--size-62);
 	min-height: var(--box-height);
 	width: var(--box-width);
-	transition: grid-template-rows 0.2s ease-in-out;
+	transition: grid-template-rows 0.2s var(--trns-timing);
 }
 
 .frame-form-inner-wrapper {
@@ -167,7 +168,7 @@ aside button {
 	border-radius: var(--br-base);
 	max-width: max(60vw, 768px);
 	margin: 0 auto;
-	transition: var(--trns-base), grid-template-rows 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+	transition: var(--trns-base), grid-template-rows 0.4s var(--trns-timing);
 }
 
 .frame-form-inner-wrapper:has(.preview-wrapper.show) {
@@ -199,13 +200,13 @@ aside button {
 	max-width: var(--size-80);
 	fill: var(--svg-fill);
 	transform: rotate(0);
-	transition: fill 0.2s ease-in-out, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+	transition: fill 0.2s var(--trns-timing), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .preview-wrapper {
 	opacity: 0;
 	overflow: hidden;
-	transition: var(--trns-long), opacity 0.4s cubic-bezier(0.5, 0, 0.5, 1);
+	transition: var(--trns-long), opacity 0.4s var(--trns-timing);
 }
 
 .preview-wrapper.show {
@@ -219,6 +220,7 @@ aside button {
 	width: auto;
 	margin: 0 auto;
 	display: block;
+	border-radius: 4px;
 	box-shadow: var(--box-shadow);
 }
 
@@ -226,7 +228,7 @@ aside button {
 	margin-top: var(--size-30);
 	text-align: center;
 	color: var(--color-text-secondary);
-	transition: color 0.2s ease-in-out;
+	transition: color 0.2s var(--trns-timing);
 }
 
 .frame-form-field {
@@ -239,7 +241,7 @@ aside button {
 	margin-top: var(--size-10);
 	font-size: var(--fs-small);
 	color: var(--color-text-secondary);
-	transition: color 0.2s ease-in-out;
+	transition: color 0.2s var(--trns-timing);
 }
 
 #frame-form {
@@ -249,15 +251,14 @@ aside button {
 
 input {
 	color: var(--color-text-primary);
-	border: 2px solid var(--color-background);
+	border: 2px solid var(--color-border);
 	padding: var(--size-12);
 	border-radius: var(--br-base);
 	width: 100%;
 	margin: var(--size-10) auto var(--size-15);
 	outline: none;
 	background: var(--color-surface);
-	box-shadow: var(--box-shadow);
-	transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	transition: border-color 0.2s cubic-bezier(0.5, 0, 0.5, 1), background-color 0.2s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 input:hover {
