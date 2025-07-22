@@ -79,3 +79,5 @@ npm run make
 ```
 npm run package
 ```
+
+This project was built using Node v22.17.1 (npm v10.9.2), see if downloading those versions resolve the issue.
